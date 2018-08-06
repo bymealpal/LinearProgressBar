@@ -80,8 +80,13 @@ open class LinearProgressBar: UIView {
     
     //Start the animation
     open func stopAnimation() {
-        /// basically we only need to set this flag to false, so when the animation finishes it will simply break out the animation loop
+        
         self.isAnimationRunning = false
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.progressBarIndicator.frame = CGRect(x: 0, y: 0, width: self.widthForLinearBar, height: 0)
+            self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.widthForLinearBar, height: 0)
+        })
     }
     
     //MARK: PRIVATE FUNCTIONS    ------------------------------------------------------------------------------------------
