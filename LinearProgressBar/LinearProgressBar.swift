@@ -81,12 +81,7 @@ open class LinearProgressBar: UIView {
     //Start the animation
     open func stopAnimation() {
         
-        self.isAnimationRunning = false
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.progressBarIndicator.frame = CGRect(x: 0, y: 0, width: self.widthForLinearBar, height: 0)
-            self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.widthForLinearBar, height: 0)
-        })
+        self.isAnimationRunning = false        
     }
     
     //MARK: PRIVATE FUNCTIONS    ------------------------------------------------------------------------------------------
